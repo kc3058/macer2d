@@ -31,7 +31,7 @@
       Real halfMass, ihalfRadius;  
       Kuzmin_in s;
 
-      // Sum over upper and lower 2 cells [13,14,15,16] in theta direction
+      // Sum over upper and lower 2 cells in theta direction
       for (int j=0; j<cols; j++)
         for (int i=0; i<rows; i++){
           sumMass[j]+=stellarMass[i][j];

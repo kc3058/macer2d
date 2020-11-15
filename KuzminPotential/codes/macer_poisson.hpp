@@ -21,6 +21,9 @@
     //    Two dimentional array stellarMass[row][col] containing
     //    stellar masses (without ghost cells) between upper and lower   
     //    cells in theta direction (row) and all cells in radial direction (col)
+    //    Based on the real data from model, the stellar masses are concentrated
+    //    between the 2 cells above and 2 cells below the equatorial plane so that
+    //    the appropriate dimensions of 2D array would be stellarMass[4][120].
     // Output:
     //    Kuzmin_in structure containing total mass (M) and length scale (a)
     //*********************************************************************************
@@ -64,9 +67,9 @@
     //        j = index to theta component of the cells where gradient phi is computed
     //        Kuzim_in = structure contains the Kuzim disk parameters
     // Output:
-    //        Kuzmin_out structure contains radial and azimuthal components of force per
+    //        Kuzmin_out structure contains radial and polar components of force per
     //        unit mass (negative of analytical gradient of Kuzmin disk potential) at 
-    //        location indicated by radial and azimutal index i & j
+    //        location indicated by radial and polar index i & j
     //********************************************************************************* 
     Kuzmin_out getForce(MeshBlock *pmb, int i, int j, Kuzmin_in s_in, Real G)
     {
